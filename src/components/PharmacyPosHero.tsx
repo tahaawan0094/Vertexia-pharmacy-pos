@@ -13,11 +13,13 @@ import {
   ArrowRight,
   Sparkles,
   CheckCircle2,
+  Download,
+  Crown,
 } from "lucide-react";
 
 export default function PharmacyPosHero() {
   return (
-    <section className="relative isolate min-h-screen w-full overflow-hidden bg-[#0a0a0a] text-white pt-32 pb-20 px-6 sm:px-10 lg:px-16 flex flex-col justify-center">
+    <section className="relative isolate min-h-screen w-full overflow-hidden bg-black text-white pt-32 pb-20 px-6 sm:px-10 lg:px-16 flex flex-col justify-center">
       {/* Background Glows & Overlay */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#b692ff]/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute top-10 right-10 w-96 h-96 bg-[#7c4dff]/10 rounded-full blur-[120px] pointer-events-none" />
@@ -25,36 +27,32 @@ export default function PharmacyPosHero() {
       {/* Hero Header */}
       <div className="max-w-6xl mx-auto w-full text-center relative z-10 flex flex-col items-center">
         {/* Top Tagline Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/15 text-[#b692ff] text-xs font-mono tracking-widest uppercase mb-8 shadow-inner"
-        >
-          <Sparkles className="w-3.5 h-3.5" />
-          <span>Vertexia Enterprise Product</span>
-          <span className="w-1.5 h-1.5 rounded-full bg-[#b692ff] animate-pulse" />
-        </motion.div>
+    
 
-        {/* Main Heading */}
-        <motion.h1
+        {/* Main Heading styled like Home Page */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] max-w-5xl"
+          className="flex flex-col items-center text-center max-w-6xl"
         >
-          Smart Pharmacy POS & <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#b692ff] via-[#d4bbfc] to-white">
-            Inventory Software
-          </span>
-        </motion.h1>
+          <h1 className="font-bold tracking-tight text-white text-[40px] sm:text-[70px] md:text-[98px] lg:text-[128px] leading-none uppercase select-none flex flex-wrap justify-center items-center gap-x-3 sm:gap-x-5">
+            <span>Pharmacy</span>
+            <span className="bg-gradient-to-r from-[#b692ff] via-white to-[#b692ff] bg-clip-text text-transparent inline-block pr-3 sm:pr-5 py-1">
+              POS
+            </span>
+          </h1>
+          <p className="mt-4 text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight text-white/90 max-w-4xl">
+            Smart Inventory & Sales Management Software<span className="text-[#b692ff]">.</span>
+          </p>
+        </motion.div>
 
         {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-6 text-base sm:text-xl text-white/70 max-w-3xl leading-relaxed font-normal"
+          className="mt-6 text-xs sm:text-sm tracking-[0.15em] text-white/80 max-w-2xl leading-relaxed uppercase"
         >
           Engineered for medical stores, retail pharmacies, and wholesale distributors in Pakistan.
           Automate batch & expiry tracking, fast billing barcode scanning, formula lookups, and profit analytics.
@@ -65,21 +63,29 @@ export default function PharmacyPosHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-10 flex flex-col sm:flex-row items-center gap-4"
+          className="mt-10 flex flex-col items-center gap-3"
         >
-          <Link
-            to="/contact"
-            className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-[#b692ff] text-black font-semibold text-sm tracking-wider uppercase transition-all duration-300 hover:bg-[#a273ff] hover:shadow-[0_0_30px_rgba(182,146,255,0.4)]"
-          >
-            <span>Book Live POS Demo</span>
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </Link>
-          <a
-            href="#features"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white/5 border border-white/15 text-white font-medium text-sm tracking-wider uppercase hover:bg-white/10 transition-colors"
-          >
-            <span>Explore Capabilities</span>
-          </a>
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <a
+              href="/pos/MedKit%20POS%20Setup.exe"
+              download="MedKit POS Setup.exe"
+              className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-[#b692ff] text-black font-extrabold text-sm tracking-wider uppercase transition-all duration-300 hover:bg-[#a273ff] hover:shadow-[0_0_30px_rgba(182,146,255,0.4)]"
+            >
+              <Download className="w-5 h-5 transition-transform group-hover:translate-y-0.5" />
+              <span>Download Free For Windows</span>
+            </a>
+            <a
+              href="#pricing"
+              className="group inline-flex items-center gap-2.5 px-8 py-4 rounded-xl bg-white/10 border border-white/20 text-white font-extrabold text-sm tracking-wider uppercase hover:bg-white/20 hover:border-[#b692ff]/50 transition-all shadow-lg"
+            >
+              <Crown className="w-5 h-5 text-[#b692ff] group-hover:scale-110 transition-transform" />
+              <span>Get Lifetime — $180 Once</span>
+            </a>
+          </div>
+          <div className="flex items-center gap-2 text-[11px] font-mono text-white/60 mt-1">
+            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+            <span>Windows Setup (.exe) • 15 Days Free Trial Included • $180 One-Time Lifetime License</span>
+          </div>
         </motion.div>
 
         {/* Key Selling Highlights Bar */}

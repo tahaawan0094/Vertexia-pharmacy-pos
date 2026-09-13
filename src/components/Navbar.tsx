@@ -21,7 +21,7 @@ const navItems: NavItem[] = [
         label: "Pharmacy POS",
         href: "/products/pharmacy-pos",
         description: "Complete Pharmacy Management, Batch Expiry & Sales POS",
-        badge: "HOT",
+        badge: "15D TRIAL",
       },
     ],
   },

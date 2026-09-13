@@ -3,6 +3,10 @@ import Navbar from "@/components/Navbar";
 import { pharmacyPosPageSchema, buildCanonicalUrl } from "@/lib/seo";
 import PharmacyPosHero from "@/components/PharmacyPosHero";
 import PharmacyPosFeatures from "@/components/PharmacyPosFeatures";
+import PharmacyPosWorkflow from "@/components/PharmacyPosWorkflow";
+import PharmacyPosHardware from "@/components/PharmacyPosHardware";
+import PharmacyPosComparison from "@/components/PharmacyPosComparison";
+import PharmacyPosPricing from "@/components/PharmacyPosPricing";
 import FAQSection from "@/components/FAQSection";
 import NewsletterSection from "@/components/NewsletterSection";
 import FooterSection from "@/components/FooterSection";
@@ -32,12 +36,16 @@ export const Route = createFileRoute("/products/pharmacy-pos")({
 
 function PharmacyPosPage() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white relative">
+    <div className="min-h-screen bg-black text-white relative">
       <Navbar />
 
       <main className="relative z-0">
         <PharmacyPosHero />
         <PharmacyPosFeatures />
+        <PharmacyPosWorkflow />
+        <PharmacyPosHardware />
+        <PharmacyPosComparison />
+        <PharmacyPosPricing />
         <FAQSection />
         <NewsletterSection />
       </main>
@@ -46,3 +54,4 @@ function PharmacyPosPage() {
     </div>
   );
 }
+
