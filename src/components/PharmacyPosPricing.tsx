@@ -88,7 +88,6 @@ export default function PharmacyPosPricing() {
                   "Cashier Roles & Permission Security",
                   "1-Click Profit/Loss & Tax Reports",
                   "Cloud Sync & Offline Billing Mode",
-                  "Standard Technical Support",
                 ].map((feat, idx) => (
                   <div key={idx} className="flex items-center gap-3">
                     <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
@@ -154,7 +153,6 @@ export default function PharmacyPosPricing() {
                   "$180 One-Time Lifetime Software License",
                   "15-Day Free Trial Included Before Payment",
                   "Zero Monthly Fees Ever",
-                  "Pre-loaded 10,000+ Medicine Database",
                   "Multi-Counter & Unlimited Staff Accounts",
                   "Distributor Payables & Purchase Orders",
                   "1-Click Financial, Stock Audit & Expiry Reports",
