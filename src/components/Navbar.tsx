@@ -151,15 +151,20 @@ export default function Navbar() {
                   <AnimatePresence>
                     {isProductsDropdownOpen && (
                       <motion.div
-                        initial={{ opacity: 0, y: 10, scale: 0.98 }}
+                        initial={{ opacity: 0, y: 12, scale: 0.96 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 8, scale: 0.98 }}
-                        transition={{ duration: 0.2, ease: "easeOut" }}
-                        className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-72 bg-[#0e0e11]/95 backdrop-blur-xl border border-white/15 rounded-xl p-3 shadow-2xl shadow-black/80 z-[120]"
+                        exit={{ opacity: 0, y: 8, scale: 0.96 }}
+                        transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                        className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-84 bg-[#0a0a0d]/95 backdrop-blur-2xl border border-white/20 rounded-2xl p-3.5 shadow-2xl shadow-black/95 z-[120] overflow-hidden"
                       >
-                        <div className="text-[10px] tracking-widest text-white/40 uppercase font-mono px-3 pt-2 pb-1.5 border-b border-white/10 mb-1">
-                          Featured Products
+                        {/* Top Ambient Glow */}
+                        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#b692ff]/60 to-transparent" />
+
+                        <div className="text-[10px] tracking-[0.2em] font-mono text-[#b692ff] uppercase px-3 pt-1 pb-2 flex items-center justify-between">
+                          <span>Featured Product</span>
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#b692ff] animate-ping" />
                         </div>
+
                         {item.dropdown.map((sub) => {
                           const isSubActive = pathname === sub.href;
                           return (
@@ -167,28 +172,31 @@ export default function Navbar() {
                               key={sub.label}
                               to={sub.href}
                               onClick={() => setIsProductsDropdownOpen(false)}
-                              className={`group/item flex items-start gap-3 p-3 rounded-lg transition-all ${
+                              className={`group/item flex items-center gap-3.5 p-3 rounded-xl border transition-all duration-300 ${
                                 isSubActive
-                                  ? "bg-[#b692ff]/15 border border-[#b692ff]/30 text-white"
-                                  : "hover:bg-white/5 border border-transparent text-white/90"
+                                  ? "bg-[#b692ff]/20 border-[#b692ff]/50 text-white shadow-lg shadow-[#b692ff]/10"
+                                  : "bg-white/[0.03] border-white/10 hover:bg-[#b692ff]/10 hover:border-[#b692ff]/40 text-white/90"
                               }`}
                             >
-                              <div className="p-2 rounded-md bg-[#b692ff]/10 text-[#b692ff] group-hover/item:bg-[#b692ff] group-hover/item:text-black transition-colors mt-0.5">
-                                <Pill className="w-4 h-4" />
+                              <div className="w-10 h-10 rounded-xl bg-[#b692ff]/15 border border-[#b692ff]/30 text-[#b692ff] flex items-center justify-center group-hover/item:bg-[#b692ff] group-hover/item:text-black transition-all duration-300 shrink-0">
+                                <Pill className="w-5 h-5" />
                               </div>
-                              <div className="flex-1">
-                                <div className="flex items-center justify-between text-xs font-semibold tracking-wider text-white group-hover/item:text-[#b692ff] transition-colors">
-                                  <span>{sub.label}</span>
+                              <div className="flex-1 min-w-0">
+                                <div className="flex items-center justify-between gap-1">
+                                  <span className="text-sm font-bold text-white tracking-tight group-hover/item:text-[#b692ff] transition-colors">
+                                    {sub.label}
+                                  </span>
                                   {sub.badge && (
-                                    <span className="bg-[#b692ff] text-black text-[9px] font-bold px-1.5 py-0.5 rounded font-mono">
+                                    <span className="bg-[#b692ff] text-black text-[9px] font-extrabold font-mono px-2 py-0.5 rounded-full uppercase tracking-wider shrink-0">
                                       {sub.badge}
                                     </span>
                                   )}
                                 </div>
-                                <p className="text-[11px] text-white/50 leading-tight mt-1 font-normal group-hover/item:text-white/70">
+                                <p className="text-[11px] text-white/60 leading-snug mt-0.5 group-hover/item:text-white/80 line-clamp-2">
                                   {sub.description}
                                 </p>
                               </div>
+                              <ArrowUpRight className="w-4 h-4 text-[#b692ff] opacity-0 group-hover/item:opacity-100 group-hover/item:translate-x-0.5 group-hover/item:-translate-y-0.5 transition-all shrink-0" />
                             </Link>
                           );
                         })}
