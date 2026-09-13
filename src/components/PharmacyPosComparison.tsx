@@ -153,8 +153,8 @@ export default function PharmacyPosComparison() {
               <span>Full 15-Day Free Trial Available Immediately</span>
             </div>
             <a
-              href="/pos/MedKit%20POS%20Setup.exe"
-              download="MedKit POS Setup.exe"
+              href="https://github.com/tahaawan0094/Vertexia-pharmacy-pos/releases/download/v1.0.0/MedKit.POS.Setup.exe"
+              download="MedKit.POS.Setup.exe"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#b692ff] text-black font-extrabold text-xs uppercase tracking-wider hover:bg-[#a273ff] transition-colors"
             >
               <Download className="w-4 h-4" />

@@ -67,8 +67,8 @@ export default function PharmacyPosHero() {
         >
           <div className="flex flex-col sm:flex-row items-center gap-4">
             <a
-              href="/pos/MedKit%20POS%20Setup.exe"
-              download="MedKit POS Setup.exe"
+              href="https://github.com/tahaawan0094/Vertexia-pharmacy-pos/releases/download/v1.0.0/MedKit.POS.Setup.exe"
+              download="MedKit.POS.Setup.exe"
               className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-[#b692ff] text-black font-extrabold text-sm tracking-wider uppercase transition-all duration-300 hover:bg-[#a273ff] hover:shadow-[0_0_30px_rgba(182,146,255,0.4)]"
             >
               <Download className="w-5 h-5 transition-transform group-hover:translate-y-0.5" />
