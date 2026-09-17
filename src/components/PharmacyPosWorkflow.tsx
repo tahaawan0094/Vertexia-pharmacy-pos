@@ -32,7 +32,7 @@ export default function PharmacyPosWorkflow() {
         "Download the Windows installer executable (.exe). Run the setup wizard to get your pharmacy software ready in under 2 minutes with no technical knowledge required.",
       icon: Download,
       actionText: "Download Windows App (.exe)",
-      actionHref: "https://github.com/tahaawan0094/Vertexia-pharmacy-pos/releases/download/v1.0.0/MedKit.POS.Setup.exe",
+      actionHref: "/api/pos/download",
       badge: "STEP 1",
     },
     {

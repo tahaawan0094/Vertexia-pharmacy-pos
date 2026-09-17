@@ -167,6 +167,14 @@ async function handleSendEmailRequest(request: Request) {
   }
 }
 
+const MEDKIT_POS_DOWNLOAD_URL =
+  process.env.MEDKIT_POS_DOWNLOAD_URL ||
+  "https://github.com/tahaawan0094/Vertexia-pharmacy-pos/releases/download/v1.0.1/MedKit.POS.Setup.exe";
+
+function handlePosDownloadRequest() {
+  return Response.redirect(MEDKIT_POS_DOWNLOAD_URL, 302);
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
@@ -176,6 +184,10 @@ export default {
         const redirectUrl = new URL(request.url);
         redirectUrl.hostname = "www.vertexiaagency.com";
         return Response.redirect(redirectUrl.toString(), 301);
+      }
+
+      if (url.pathname === "/api/pos/download" || url.pathname === "/api/pos/download/") {
+        return handlePosDownloadRequest();
       }
 
       if (url.pathname === "/api/send-email") {
