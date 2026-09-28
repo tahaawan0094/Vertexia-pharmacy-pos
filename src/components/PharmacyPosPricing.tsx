@@ -99,7 +99,7 @@ export default function PharmacyPosPricing() {
 
             <div className="mt-10 pt-6 border-t border-white/5">
               <a
-                href="https://github.com/tahaawan0094/Vertexia-pharmacy-pos/releases/download/v1.0.2/MedKit.POS.Setup.exe"
+                href="/products/pos/download"
                 download="MedKit.POS.Setup.exe"
                 className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-white/10 border border-white/15 text-white font-bold text-xs uppercase tracking-widest hover:bg-white/20 transition-all"
               >
